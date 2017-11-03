@@ -13,5 +13,4 @@ public class Ortogonal extends Tanque
 		this.ancho = ancho;
 		this.altura = altura;
 	}
-
 }
