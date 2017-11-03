@@ -1,5 +1,6 @@
 package laboratorio5;
 
-public class Valvulas {
+public class Valvulas 
+{
 
 }

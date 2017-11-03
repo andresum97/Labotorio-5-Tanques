@@ -1,6 +1,7 @@
 package laboratorio5;
 
-public class Cubica extends Tanque {
+public class Cubica extends Tanque 
+{
 	
 	protected double lados;
 	

@@ -1,6 +1,7 @@
 package laboratorio5;
 
-public class Ortogonal extends Tanque {
+public class Ortogonal extends Tanque 
+{
 
 	protected double largo;
 	protected double ancho;

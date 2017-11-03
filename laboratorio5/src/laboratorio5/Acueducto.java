@@ -1,5 +1,6 @@
 package laboratorio5;
 
-public class Acueducto {
+public class Acueducto 
+{
 
 }

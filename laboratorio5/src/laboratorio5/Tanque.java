@@ -10,39 +10,4 @@ public class Tanque
 		this.id = id;
 		valvulas = new Valvulas[10];
 	}
-	
-	//public Double Dimensiones()
-	//{
-		
-	//}
-	
-	public void encenderValvula(int NoValvula, String Fecha)
-	{
-		
-	}
-	
-	public void ApagarValvula(int NoValvula, String Fecha)
-	{
-		
-	}
-	
-	//public String CantidadAgua()
-	{
-		
-	}
-	
-	public void RestablecerAgua()
-	{
-		
-	}
-	
-	//public int CantidadValculas()
-	{
-		
-	}
-	
-	//public String InfoMunicipio()
-	{
-		
-	}
 }
