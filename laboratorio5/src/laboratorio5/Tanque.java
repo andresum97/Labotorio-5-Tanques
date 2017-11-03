@@ -11,10 +11,10 @@ public class Tanque
 		valvulas = new Valvulas[10];
 	}
 	
-	public String Dimensiones()
-	{
-		return "Las dimensiones son..";
-	}
+	//public Double Dimensiones()
+	//{
+		
+	//}
 	
 	public void encenderValvula(int NoValvula, String Fecha)
 	{

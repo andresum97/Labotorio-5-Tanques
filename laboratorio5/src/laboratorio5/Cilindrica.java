@@ -11,5 +11,11 @@ public class Cilindrica extends Tanque {
 		this.altura = altura;
 		this.radio = radio;
 	}
-
+	
+	public double Dimensiones()
+	{
+		double resultado;
+		resultado = (3.14)*radio*altura;
+		return resultado;
+	}
 }
