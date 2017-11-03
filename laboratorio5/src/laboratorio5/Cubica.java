@@ -9,5 +9,4 @@ public class Cubica extends Tanque
 		super(id);
 		this.lados = lados;
 	}
-
 }
