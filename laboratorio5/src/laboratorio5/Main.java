@@ -70,7 +70,7 @@ public class Main {
 		lblAl.setBounds(223, 48, 61, 16);
 		frame.getContentPane().add(lblAl);
 		
-		JLabel lblBase = new JLabel("Base:");
+		JLabel lblBase = new JLabel("Ancho:");
 		lblBase.setBounds(223, 73, 61, 16);
 		frame.getContentPane().add(lblBase);
 		
