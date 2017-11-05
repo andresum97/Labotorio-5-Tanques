@@ -58,7 +58,7 @@ public class Main {
 		frame.getContentPane().setLayout(null);
 		
 		tipos = new JComboBox();
-		tipos.setModel(new DefaultComboBoxModel(new String[] {"Tipos de Tanque:", "Cilindrico", "Cubico", "Otogonal", ""}));
+		tipos.setModel(new DefaultComboBoxModel(new String[] {"Tipos de Tanque:", "Cilindrico", "Cubico", "Otogonal"}));
 		tipos.setBounds(17, 21, 164, 27);
 		frame.getContentPane().add(tipos);
 		
@@ -116,6 +116,14 @@ public class Main {
 		frame.getContentPane().add(lblNivelDeAgua);
 		
 		JButton btnAgregarTanque = new JButton("Agregar tanque");
+		btnAgregarTanque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				altura.setText("");
+				base.setText("");
+				largo.setText("");
+				cantidadAgua.setText("");
+			}
+		});
 		btnAgregarTanque.setBounds(223, 188, 140, 29);
 		frame.getContentPane().add(btnAgregarTanque);
 		
@@ -130,12 +138,16 @@ public class Main {
 		frame.getContentPane().add(btnSalir);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Disponibilidad", "True", "False"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Disponibilidad", "Abierto", "Cerrado"}));
 		comboBox.setBounds(493, 94, 176, 27);
 		frame.getContentPane().add(comboBox);
 		
 		JButton btnNivelDeAgua = new JButton("Nivel de Agua");
-		btnNivelDeAgua.setBounds(17, 60, 117, 29);
+		btnNivelDeAgua.setBounds(17, 259, 117, 29);
 		frame.getContentPane().add(btnNivelDeAgua);
+		
+		JButton btnCambiarDiponibilidad = new JButton("Cambiar diponibilidad");
+		btnCambiarDiponibilidad.setBounds(499, 127, 164, 29);
+		frame.getContentPane().add(btnCambiarDiponibilidad);
 	}
 }
