@@ -133,16 +133,19 @@ public class Main {
 		JButton btnAgregarTanque = new JButton("Agregar tanque");
 		btnAgregarTanque.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				lblLargo.setVisible(true);
 				largo.setVisible(true);
 				if(tipos.getSelectedIndex() == 0)
 				{
 					JOptionPane.showMessageDialog(null, "Escoja un tipo de tanque.");
+					altura.setText("");
+					base.setText("");
+					largo.setText("");
+					cantidadAgua.setText("");
 				}
 				if(tipos.getSelectedIndex() == 1)
 				{
-					tanques.insertItemAt(altura.getText() +"x"+ base.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L", 1);
+					tanques.insertItemAt("Cilindrico: "+ altura.getText() +"x"+ base.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L", 1);
 					altura.setText("");
 					base.setText("");
 					cantidadAgua.setText("");
@@ -151,7 +154,7 @@ public class Main {
 				}
 				if(tipos.getSelectedIndex() == 2)
 				{
-					tanques.insertItemAt(altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
+					tanques.insertItemAt("Cubico: "+ altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
 					tipos.setSelectedIndex(0);
 					altura.setText("");
 					base.setText("");
@@ -160,7 +163,7 @@ public class Main {
 				}
 				if(tipos.getSelectedIndex() == 3)
 				{
-					tanques.insertItemAt(altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
+					tanques.insertItemAt("Ortogonal: "+altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
 					tipos.setSelectedIndex(0);
 					altura.setText("");
 					base.setText("");
