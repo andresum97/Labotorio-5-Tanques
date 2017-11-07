@@ -45,7 +45,8 @@ public class Main {
 	/**
 	 * Create the application.
 	 */
-	public Main() {
+	public Main() 
+	{
 		initialize();
 	}
 	
@@ -57,15 +58,18 @@ public class Main {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 724, 333);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		tipos = new JComboBox();
-		tipos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		tipos.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				if(tipos.getSelectedIndex() == 1) {
 					lblbase.setText("Radio");
 					lblLargo.setVisible(false);
@@ -135,7 +139,6 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				lblLargo.setVisible(true);
 				largo.setVisible(true);
-
 					if(tipos.getSelectedIndex() == 0)
 					{
 						JOptionPane.showMessageDialog(null, "Escoja un tipo de tanque.");
@@ -150,16 +153,16 @@ public class Main {
 					if(tipos.getSelectedIndex() == 1)
 					{
 						Double.parseDouble(altura.getText());
-						altura.setText("");
 						Double.parseDouble(base.getText());
-						base.setText("");
 						municipio.getText().toString();
-						municipio.setText("");
 						Double.parseDouble(personas.getText());
-						personas.setText("");
 						lblbase.setText("Base");
 						tipos.setSelectedIndex(0);
 						tanques.insertItemAt("Cilindrico: "+ altura.getText() +"x"+ base.getText() +" - municipio: "+ municipio.getText(), 1);
+						personas.setText("");
+						municipio.setText("");
+						base.setText("");
+						altura.setText("");
 					}
 				}
 				catch(Exception a) 
@@ -178,17 +181,17 @@ public class Main {
 					{
 						tipos.setSelectedIndex(0);
 						Double.parseDouble(altura.getText());
-						altura.setText("");
 						Double.parseDouble(base.getText());
-						base.setText("");
 						Double.parseDouble(largo.getText());
-						largo.setText("");
 						municipio.getText().toString();
-						municipio.setText("");
 						Double.parseDouble(personas.getText());
-						personas.setText("");
 						tipos.setSelectedIndex(0);
 						tanques.insertItemAt("Cubico: "+ altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" - municipio: "+ municipio.getText(),1);
+						personas.setText("");
+						municipio.setText("");
+						base.setText("");
+						altura.setText("");
+						largo.setText("");
 					}
 				}	
 				catch(Exception a) 
@@ -207,17 +210,17 @@ public class Main {
 					{
 						tipos.setSelectedIndex(0);
 						Double.parseDouble(altura.getText());
-						altura.setText("");
 						Double.parseDouble(base.getText());
-						base.setText("");
 						Double.parseDouble(largo.getText());
-						largo.setText("");
 						municipio.getText().toString();
-						municipio.setText("");
 						Double.parseDouble(personas.getText());
-						personas.setText("");
 						tipos.setSelectedIndex(0);
 						tanques.insertItemAt("Ortogonal: "+altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" - municipio:  "+ municipio.getText(),1);
+						personas.setText("");
+						municipio.setText("");
+						base.setText("");
+						altura.setText("");
+						largo.setText("");
 					}
 				}
 				catch(Exception a) 
