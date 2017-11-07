@@ -19,11 +19,12 @@ public class Main {
 	private JTextField altura;
 	private JTextField base;
 	private JTextField largo;
-	private JTextField cantidadAgua;
+	private JTextField municipio;
 	private JLabel lblbase;
 	private JLabel lblAl;
 	private JLabel lblLargo;
 	private JComboBox tanques;
+	private JTextField personas;
 
 	/**
 	 * Launch the application.
@@ -70,7 +71,6 @@ public class Main {
 					lblLargo.setVisible(false);
 					largo.setVisible(false);
 				}	
-				
 			}
 		});
 		tipos.setModel(new DefaultComboBoxModel(new String[] {"Tipos de Tanque:", "Cilindrico", "Cubico", "Otogonal"}));
@@ -108,18 +108,18 @@ public class Main {
 		largo.setBounds(276, 95, 61, 26);
 		frame.getContentPane().add(largo);
 		
-		cantidadAgua = new JTextField();
-		cantidadAgua.setBounds(223, 147, 114, 26);
-		frame.getContentPane().add(cantidadAgua);
-		cantidadAgua.setColumns(10);
+		municipio = new JTextField();
+		municipio.setBounds(223, 147, 114, 26);
+		frame.getContentPane().add(municipio);
+		municipio.setColumns(10);
 		
-		JLabel lblCantidadDeAgua = new JLabel("Cantidad de agua (Litros):");
-		lblCantidadDeAgua.setBounds(223, 132, 164, 16);
+		JLabel lblCantidadDeAgua = new JLabel("Municipio al que pertenece:");
+		lblCantidadDeAgua.setBounds(223, 132, 176, 16);
 		frame.getContentPane().add(lblCantidadDeAgua);
 		
 		tanques = new JComboBox();
-		tanques.setModel(new DefaultComboBoxModel(new String[] {"Numero de tanque:", ""}));
-		tanques.setBounds(493, 21, 176, 27);
+		tanques.setModel(new DefaultComboBoxModel(new String[] {"Seleccione un tanque:"}));
+		tanques.setBounds(493, 21, 193, 27);
 		frame.getContentPane().add(tanques);
 		
 		JLabel nivelDeAgua = new JLabel("----");
@@ -135,44 +135,104 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				lblLargo.setVisible(true);
 				largo.setVisible(true);
-				if(tipos.getSelectedIndex() == 0)
+
+					if(tipos.getSelectedIndex() == 0)
+					{
+						JOptionPane.showMessageDialog(null, "Escoja un tipo de tanque.");
+						altura.setText("");
+						base.setText("");
+						largo.setText("");
+						municipio.setText("");
+						personas.setText("");
+					}
+				try 
+				{	
+					if(tipos.getSelectedIndex() == 1)
+					{
+						Double.parseDouble(altura.getText());
+						altura.setText("");
+						Double.parseDouble(base.getText());
+						base.setText("");
+						municipio.getText().toString();
+						municipio.setText("");
+						Double.parseDouble(personas.getText());
+						personas.setText("");
+						lblbase.setText("Base");
+						tipos.setSelectedIndex(0);
+						tanques.insertItemAt("Cilindrico: "+ altura.getText() +"x"+ base.getText() +" - municipio: "+ municipio.getText(), 1);
+					}
+				}
+				catch(Exception a) 
 				{
-					JOptionPane.showMessageDialog(null, "Escoja un tipo de tanque.");
+					JOptionPane.showMessageDialog(null, "Ingrese un dato valido.");
 					altura.setText("");
 					base.setText("");
 					largo.setText("");
-					cantidadAgua.setText("");
-				}
-				if(tipos.getSelectedIndex() == 1)
-				{
-					tanques.insertItemAt("Cilindrico: "+ altura.getText() +"x"+ base.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L", 1);
-					altura.setText("");
-					base.setText("");
-					cantidadAgua.setText("");
-					lblbase.setText("Base");
+					personas.setText("");
+					municipio.setText("");
 					tipos.setSelectedIndex(0);
 				}
-				if(tipos.getSelectedIndex() == 2)
+				try 
 				{
-					tanques.insertItemAt("Cubico: "+ altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
-					tipos.setSelectedIndex(0);
+					if(tipos.getSelectedIndex() == 2)
+					{
+						tipos.setSelectedIndex(0);
+						Double.parseDouble(altura.getText());
+						altura.setText("");
+						Double.parseDouble(base.getText());
+						base.setText("");
+						Double.parseDouble(largo.getText());
+						largo.setText("");
+						municipio.getText().toString();
+						municipio.setText("");
+						Double.parseDouble(personas.getText());
+						personas.setText("");
+						tipos.setSelectedIndex(0);
+						tanques.insertItemAt("Cubico: "+ altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" - municipio: "+ municipio.getText(),1);
+					}
+				}	
+				catch(Exception a) 
+				{
+					JOptionPane.showMessageDialog(null, "Ingrese un dato valido.");
 					altura.setText("");
 					base.setText("");
 					largo.setText("");
-					cantidadAgua.setText("");
-				}
-				if(tipos.getSelectedIndex() == 3)
-				{
-					tanques.insertItemAt("Ortogonal: "+altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" cantidad de agua: "+ cantidadAgua.getText() +"L",1);
+					personas.setText("");
+					municipio.setText("");
 					tipos.setSelectedIndex(0);
+				}
+				try 
+				{
+					if(tipos.getSelectedIndex() == 3)
+					{
+						tipos.setSelectedIndex(0);
+						Double.parseDouble(altura.getText());
+						altura.setText("");
+						Double.parseDouble(base.getText());
+						base.setText("");
+						Double.parseDouble(largo.getText());
+						largo.setText("");
+						municipio.getText().toString();
+						municipio.setText("");
+						Double.parseDouble(personas.getText());
+						personas.setText("");
+						tipos.setSelectedIndex(0);
+						tanques.insertItemAt("Ortogonal: "+altura.getText() +"x"+ base.getText() +"x"+ largo.getText() +" - municipio:  "+ municipio.getText(),1);
+					}
+				}
+				catch(Exception a) 
+				{
+					JOptionPane.showMessageDialog(null, "Ingrese un dato valido.");
 					altura.setText("");
 					base.setText("");
 					largo.setText("");
-					cantidadAgua.setText("");
+					personas.setText("");
+					municipio.setText("");
+					tipos.setSelectedIndex(0);
 				}
 			}
 		});
-		btnAgregarTanque.setBounds(223, 188, 140, 29);
+		btnAgregarTanque.setBounds(223, 231, 140, 29);
 		frame.getContentPane().add(btnAgregarTanque);
 		
 		//Boton para cerrar el programa
@@ -182,7 +242,7 @@ public class Main {
 				salir(); 
 			}
 		});
-		btnSalir.setBounds(301, 259, 117, 29);
+		btnSalir.setBounds(437, 259, 117, 29);
 		frame.getContentPane().add(btnSalir);
 		
 		JComboBox disponibilidad = new JComboBox();
@@ -197,5 +257,14 @@ public class Main {
 		JButton btnCambiarDiponibilidad = new JButton("Cambiar diponibilidad");
 		btnCambiarDiponibilidad.setBounds(499, 127, 164, 29);
 		frame.getContentPane().add(btnCambiarDiponibilidad);
+		
+		JLabel lblCantidadDePersonas = new JLabel("Cantidad de personas en el municipio");
+		lblCantidadDePersonas.setBounds(223, 178, 250, 16);
+		frame.getContentPane().add(lblCantidadDePersonas);
+		
+		personas = new JTextField();
+		personas.setBounds(223, 193, 130, 26);
+		frame.getContentPane().add(personas);
+		personas.setColumns(10);
 	}
 }
